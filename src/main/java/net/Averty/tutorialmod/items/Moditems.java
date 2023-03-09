@@ -13,6 +13,8 @@ public class Moditems {
 
     public static final RegistryObject<Item> Black_Opal = Items.register("black_opal",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> Raw_Black_Opal = Items.register("raw_black_opal",
+            () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus){
         Items.register(eventBus);

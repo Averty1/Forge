@@ -1,6 +1,7 @@
 package net.Averty.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.Averty.tutorialmod.items.ModCreativeModeTabs;
 import net.Averty.tutorialmod.items.Moditems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -41,6 +42,10 @@ public class TutorialMod {
     private void addCreative(CreativeModeTabEvent.BuildContents event) {
         if(event.getTab() == CreativeModeTabs.INGREDIENTS){
             event.accept(Moditems.Black_Opal);
+            event.accept(Moditems.Raw_Black_Opal);
+        }if(event.getTab() == ModCreativeModeTabs.TUTORIAL_TAB){
+            event.accept(Moditems.Black_Opal);
+            event.accept(Moditems.Raw_Black_Opal);
         }
     }
 
