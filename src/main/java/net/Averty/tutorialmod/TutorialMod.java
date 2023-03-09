@@ -40,6 +40,7 @@ public class TutorialMod {
 
     private void addCreative(CreativeModeTabEvent.BuildContents event) {
         if(event.getTab() == CreativeModeTabs.INGREDIENTS){
+            event.accept(Moditems.Black_Opal);
         }
     }
 
