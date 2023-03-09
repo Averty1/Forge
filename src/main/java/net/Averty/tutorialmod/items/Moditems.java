@@ -17,7 +17,7 @@ public class Moditems {
     public static final RegistryObject<Item> Raw_Black_Opal = Items.register("raw_black_opal",
             () -> new Item(new Item.Properties()));
 
-    public static final RegistryObject<Item> Custom_Item = Items.register("custom_item",
+    public static final RegistryObject<Item> Mossy_Sword = Items.register("mossy_sword",
             () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus){
