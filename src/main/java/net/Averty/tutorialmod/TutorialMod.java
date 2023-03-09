@@ -43,9 +43,11 @@ public class TutorialMod {
         if(event.getTab() == CreativeModeTabs.INGREDIENTS){
             event.accept(Moditems.Black_Opal);
             event.accept(Moditems.Raw_Black_Opal);
+            event.accept(Moditems.Custom_Item);
         }if(event.getTab() == ModCreativeModeTabs.TUTORIAL_TAB){
             event.accept(Moditems.Black_Opal);
             event.accept(Moditems.Raw_Black_Opal);
+            event.accept(Moditems.Custom_Item);
         }
     }
 
