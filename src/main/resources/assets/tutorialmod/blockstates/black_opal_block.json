@@ -1,5 +1,5 @@
 {
-  "Varaints": {
-    "": { "Model": "tutorial:block/black_opal_block" }
+  "variants": {
+    "": { "model": "tutorialmod:block/black_opal_block" }
   }
 }
