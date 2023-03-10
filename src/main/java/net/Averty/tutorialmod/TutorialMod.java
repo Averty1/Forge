@@ -50,6 +50,10 @@ public class TutorialMod {
 
         if (event.getTab() == CreativeModeTabs.BUILDING_BLOCKS){
             event.accept(ModBlocks.Black_Opal_Block);
+            event.accept(ModBlocks.Black_Opal_Ore);
+            event.accept(ModBlocks.Deepslate_Black_Opal_Ore);
+            event.accept(ModBlocks.Netherrack_Black_Opal_Ore);
+            event.accept(ModBlocks.Endstone_Black_Opal_Ore);
         }
 
         if(event.getTab() == ModCreativeModeTabs.TUTORIAL_TAB){
@@ -58,6 +62,10 @@ public class TutorialMod {
             event.accept(Moditems.Mossy_Sword);
 
             event.accept(ModBlocks.Black_Opal_Block);
+            event.accept(ModBlocks.Black_Opal_Ore);
+            event.accept(ModBlocks.Deepslate_Black_Opal_Ore);
+            event.accept(ModBlocks.Netherrack_Black_Opal_Ore);
+            event.accept(ModBlocks.Endstone_Black_Opal_Ore);
         }
     }
 
