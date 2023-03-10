@@ -1,7 +1,9 @@
 package net.Averty.tutorialmod.items;
 
 import net.Averty.tutorialmod.TutorialMod;
+import net.minecraft.util.datafix.fixes.WeaponSmithChestLootTableFix;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ProjectileWeaponItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
