@@ -1,6 +1,7 @@
 package net.Averty.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.Averty.tutorialmod.block.ModBlocks;
 import net.Averty.tutorialmod.items.ModCreativeModeTabs;
 import net.Averty.tutorialmod.items.Moditems;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -26,6 +27,7 @@ public class TutorialMod {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         Moditems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -44,10 +46,18 @@ public class TutorialMod {
             event.accept(Moditems.Black_Opal);
             event.accept(Moditems.Raw_Black_Opal);
             event.accept(Moditems.Mossy_Sword);
-        }if(event.getTab() == ModCreativeModeTabs.TUTORIAL_TAB){
+        }
+
+        if (event.getTab() == CreativeModeTabs.BUILDING_BLOCKS){
+            event.accept(ModBlocks.Black_Opal_Block);
+        }
+
+        if(event.getTab() == ModCreativeModeTabs.TUTORIAL_TAB){
             event.accept(Moditems.Black_Opal);
             event.accept(Moditems.Raw_Black_Opal);
             event.accept(Moditems.Mossy_Sword);
+
+            event.accept(ModBlocks.Black_Opal_Block);
         }
     }
 
