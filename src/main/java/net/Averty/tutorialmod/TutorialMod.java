@@ -57,10 +57,11 @@ public class TutorialMod {
         }
 
         if(event.getTab() == ModCreativeModeTabs.TUTORIAL_TAB){
+            //Items
             event.accept(Moditems.Black_Opal);
             event.accept(Moditems.Raw_Black_Opal);
             event.accept(Moditems.Mossy_Sword);
-
+            //Blocks
             event.accept(ModBlocks.Black_Opal_Block);
             event.accept(ModBlocks.Black_Opal_Ore);
             event.accept(ModBlocks.Deepslate_Black_Opal_Ore);
