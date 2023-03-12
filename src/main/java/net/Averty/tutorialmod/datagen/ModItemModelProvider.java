@@ -1,11 +1,13 @@
 package net.Averty.tutorialmod.datagen;
 
 import net.Averty.tutorialmod.TutorialMod;
+import net.Averty.tutorialmod.block.ModBlocks;
 import net.Averty.tutorialmod.items.Moditems;
 import net.Averty.tutorialmod.items.Moditems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -20,8 +22,14 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         simpleItem(Moditems.Black_Opal);
         simpleItem(Moditems.Raw_Black_Opal);
+        saplingItem(ModBlocks.Ebony_Sapling);
     }
 
+    private ItemModelBuilder saplingItem(RegistryObject<Block> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(TutorialMod.MOD_ID, "block/" + item.getId().getPath()));
+    }
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
@@ -34,3 +42,5 @@ public class ModItemModelProvider extends ItemModelProvider {
                 new ResourceLocation(TutorialMod.MOD_ID,"item/" + item.getId().getPath()));
     }
 }
+
+

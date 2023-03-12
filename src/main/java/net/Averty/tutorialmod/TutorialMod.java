@@ -67,6 +67,25 @@ public class TutorialMod {
             event.accept(ModBlocks.Deepslate_Black_Opal_Ore);
             event.accept(ModBlocks.Netherrack_Black_Opal_Ore);
             event.accept(ModBlocks.Endstone_Black_Opal_Ore);
+            //Trees
+            event.accept(ModBlocks.Ebony_Leaves);
+            event.accept(ModBlocks.Ebony_Log);
+            event.accept(ModBlocks.Ebony_Wood);
+            event.accept(ModBlocks.Ebony_Planks);
+            event.accept(ModBlocks.Stripped_Ebony_Log);
+            event.accept(ModBlocks.Stripped_Ebony_Wood);
+            event.accept(ModBlocks.Ebony_Sapling);
+
+            if(event.getTab() == CreativeModeTabs.NATURAL_BLOCKS) {
+
+                event.accept(ModBlocks.Ebony_Leaves);
+                event.accept(ModBlocks.Ebony_Log);
+                event.accept(ModBlocks.Ebony_Wood);
+                event.accept(ModBlocks.Ebony_Planks);
+                event.accept(ModBlocks.Stripped_Ebony_Log);
+                event.accept(ModBlocks.Stripped_Ebony_Wood);
+                event.accept(ModBlocks.Ebony_Sapling);
+            }
         }
     }
 

@@ -2,13 +2,17 @@ package net.Averty.tutorialmod.block;
 
 import com.mojang.blaze3d.shaders.Uniform;
 import net.Averty.tutorialmod.TutorialMod;
+import net.Averty.tutorialmod.block.custom.ModFlammableRotatedPillarBlock;
 import net.Averty.tutorialmod.items.Moditems;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.DropExperienceBlock;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -37,6 +41,59 @@ public class ModBlocks {
     public static final RegistryObject<Block> Endstone_Black_Opal_Ore = registerBlock("endstone_black_opal_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(9f).requiresCorrectToolForDrops(), UniformInt.of(2, 6)));
+
+
+    public static final RegistryObject<Block> Ebony_Log = registerBlock("ebony_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(net.minecraft.world.level.block.Blocks.OAK_LOG)
+                    .strength(5f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> Ebony_Wood = registerBlock("ebony_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(net.minecraft.world.level.block.Blocks.OAK_WOOD)
+                    .strength(5f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> Stripped_Ebony_Log = registerBlock("stripped_ebony_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(net.minecraft.world.level.block.Blocks.STRIPPED_OAK_LOG)
+                    .strength(5f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> Stripped_Ebony_Wood = registerBlock("stripped_ebony_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(net.minecraft.world.level.block.Blocks.STRIPPED_OAK_WOOD)
+                    .strength(5f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> Ebony_Planks = registerBlock("ebony_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(net.minecraft.world.level.block.Blocks.OAK_PLANKS)
+                    .strength(5f)) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return 5;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return 20;
+                }
+            });
+    public static final RegistryObject<Block> Ebony_Leaves = registerBlock("ebony_leaves",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(net.minecraft.world.level.block.Blocks.OAK_LEAVES)) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return 30;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return 60;
+                }
+            });
+
+    public static final RegistryObject<Block> Ebony_Sapling = registerBlock("ebony_sapling",
+            () -> new SaplingBlock(null,BlockBehaviour.Properties.copy(net.minecraft.world.level.block.Blocks.OAK_SAPLING)));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
