@@ -36,7 +36,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.Ebony_Sapling.get());
 
         this.add(ModBlocks.Ebony_Leaves.get(), (block) ->
-                createLeavesDrops(block, ModBlocks.Ebony_Leaves.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+                createLeavesDrops(block, ModBlocks.Ebony_Sapling.get(), NORMAL_LEAVES_SAPLING_CHANCES));
     }
 
     @Override

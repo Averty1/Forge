@@ -10,7 +10,9 @@ import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 
@@ -18,12 +20,25 @@ import java.util.List;
 
 public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> EBONY_PLACED_KEY = createKey("ebony_placed");
+    public static final ResourceKey<PlacedFeature> Black_Opal_Placed_Key = createKey("black_opal_placed");
+    public static final ResourceKey<PlacedFeature> End_Black_opal_Placed_Key = createKey("end_black_opal_placed");
+    public static final ResourceKey<PlacedFeature> Nether_Black_Opal_Placed_Key = createKey("nether_black_opal_placed");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
         register(context, EBONY_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.EBONY_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2), ModBlocks.Ebony_Sapling.get()));
+
+        register(context, Black_Opal_Placed_Key, configuredFeatures.getOrThrow(ModConfiguredFeatures.Overworld_Black_Opal_Ore_Key),
+                ModOrePlacement.commonOrePlacement(16, //veins per chunk
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(80))));
+        register(context, Nether_Black_Opal_Placed_Key, configuredFeatures.getOrThrow(ModConfiguredFeatures.Nether_Black_Opal_Ore_Key),
+                ModOrePlacement.commonOrePlacement(9, //veins per chunk
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(80))));
+        register(context, End_Black_opal_Placed_Key, configuredFeatures.getOrThrow(ModConfiguredFeatures.End_BLack_Opal_Key),
+                ModOrePlacement.commonOrePlacement(9, //veins per chunk
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(80))));
     }
 
 
