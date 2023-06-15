@@ -27,9 +27,9 @@ import java.util.List;
 public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> EBONY_KEY = registerKey("ebony");
 
-    public static final ResourceKey<ConfiguredFeature<?, ?>> Overworld_Black_Opal_Ore_Key = registerKey("black_opal_ore");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> End_BLack_Opal_Key = registerKey("end_black_opal_ore");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> Nether_Black_Opal_Ore_Key = registerKey("nether_black_opal_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_BLACK_OPAL_ORE_KEY = registerKey("black_opal_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> END_BLACK_OPAL_ORE_KEY = registerKey("end_black_opal_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> NETHER_BLACK_OPEL_ORE_KEY = registerKey("nether_black_opal_ore");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         RuleTest stoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
@@ -38,7 +38,7 @@ public class ModConfiguredFeatures {
         RuleTest endstoneReplaceables = new BlockMatchTest(Blocks.END_STONE);
 
         List<OreConfiguration.TargetBlockState> overworldBlackOpalOres = List.of(OreConfiguration.target(stoneReplaceables,
-                ModBlocks.Black_Opal_Ore.get().defaultBlockState()),
+                        ModBlocks.Black_Opal_Ore.get().defaultBlockState()),
                 OreConfiguration.target(deepslateReplaceables, ModBlocks.Deepslate_Black_Opal_Ore.get().defaultBlockState()));
 
         register(context, EBONY_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
@@ -48,11 +48,11 @@ public class ModConfiguredFeatures {
                 new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 4),
                 new TwoLayersFeatureSize(1, 0, 2)).build());
 
-        register(context, Overworld_Black_Opal_Ore_Key, Feature.ORE, new OreConfiguration(overworldBlackOpalOres,9));
-        register(context, End_BLack_Opal_Key, Feature.ORE, new OreConfiguration(endstoneReplaceables,
-                ModBlocks.Endstone_Black_Opal_Ore.get().defaultBlockState(),9));
-        register(context, Nether_Black_Opal_Ore_Key, Feature.ORE, new OreConfiguration(netherrackReplaceables,
-                ModBlocks.Netherrack_Black_Opal_Ore.get().defaultBlockState(),9));
+        register(context, OVERWORLD_BLACK_OPAL_ORE_KEY, Feature.ORE, new OreConfiguration(overworldBlackOpalOres, 9));
+        register(context, END_BLACK_OPAL_ORE_KEY, Feature.ORE, new OreConfiguration(endstoneReplaceables,
+                ModBlocks.Endstone_Black_Opal_Ore.get().defaultBlockState(), 9));
+        register(context, NETHER_BLACK_OPEL_ORE_KEY, Feature.ORE, new OreConfiguration(netherrackReplaceables,
+                ModBlocks.Netherrack_Black_Opal_Ore.get().defaultBlockState(), 9));
     }
 
 
