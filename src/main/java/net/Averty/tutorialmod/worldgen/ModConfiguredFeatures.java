@@ -1,6 +1,6 @@
 package net.Averty.tutorialmod.worldgen;
 
-import net.Averty.tutorialmod.TutorialMod;
+import net.Averty. tutorialmod.TutorialMod;
 import net.Averty.tutorialmod.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;

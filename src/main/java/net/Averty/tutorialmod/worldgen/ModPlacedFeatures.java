@@ -1,6 +1,5 @@
 package net.Averty.tutorialmod.worldgen;
 
-import net.Averty.tutorialmod.block.ModBlocks;
 import net.Averty.tutorialmod.TutorialMod;
 import net.Averty.tutorialmod.block.ModBlocks;
 import net.minecraft.core.Holder;
@@ -34,13 +33,13 @@ public class ModPlacedFeatures {
 
         register(context, BLACK_OPAL_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_BLACK_OPAL_ORE_KEY),
                 ModOrePlacement.commonOrePlacement(16, // veins per chunk
-                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(80))));
+                        HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(-64), VerticalAnchor.absolute(80))));
         register(context, NETHER_BLACK_OPAL_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.NETHER_BLACK_OPEL_ORE_KEY),
                 ModOrePlacement.commonOrePlacement(9, // veins per chunk
-                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(80))));
+                        HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(-64), VerticalAnchor.absolute(80))));
         register(context, END_BLACK_OPAL_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.END_BLACK_OPAL_ORE_KEY),
                 ModOrePlacement.commonOrePlacement(9, // veins per chunk
-                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(80))));
+                        HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(-64), VerticalAnchor.absolute(80))));
     }
 
 
