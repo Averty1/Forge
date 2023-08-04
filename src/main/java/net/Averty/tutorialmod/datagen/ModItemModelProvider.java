@@ -23,9 +23,15 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(Moditems.Black_Opal);
         simpleItem(Moditems.Raw_Black_Opal);
         saplingItem(ModBlocks.Ebony_Sapling);
+        flowerItem(ModBlocks.Golden_Rose);
     }
 
     private ItemModelBuilder saplingItem(RegistryObject<Block> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(TutorialMod.MOD_ID, "block/" + item.getId().getPath()));
+    }
+    private ItemModelBuilder flowerItem(RegistryObject<Block> item) {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(TutorialMod.MOD_ID, "block/" + item.getId().getPath()));

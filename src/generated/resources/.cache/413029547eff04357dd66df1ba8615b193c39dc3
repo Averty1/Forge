@@ -1,4 +1,4 @@
-// 1.19.3	2023-03-11T19:33:12.971898203	Block States: tutorialmod
+// 1.19.4	2023-08-04T16:12:40.8503935	Block States: tutorialmod
 6ac439910dae387eb3cfb318a70020eb628f2cba assets/tutorialmod/blockstates/black_opal_block.json
 ece9a5ecebe76dac38012e4bb3eb6283c3a6f43b assets/tutorialmod/blockstates/black_opal_ore.json
 d2c21b9a3f5b54bab9a6adab1c80697261c28ed9 assets/tutorialmod/blockstates/deepslate_black_opal_ore.json
@@ -8,6 +8,7 @@ d2c21b9a3f5b54bab9a6adab1c80697261c28ed9 assets/tutorialmod/blockstates/deepslat
 adbbb36e1bb17a8cb2dcb49661f570684520e7f0 assets/tutorialmod/blockstates/ebony_sapling.json
 b354f20e41f396c8fa9549ca8532162b36962128 assets/tutorialmod/blockstates/ebony_wood.json
 d78eb40f15cffd0f650aa4008ad044a8a4453129 assets/tutorialmod/blockstates/endstone_black_opal_ore.json
+c2b05a65afdc25f987b4ca275693609665ba3a8c assets/tutorialmod/blockstates/golden_rose.json
 1445e43c88696983e114816f4e9cec4cdc876811 assets/tutorialmod/blockstates/netherrack_black_opal_ore.json
 6d5bdbd25e777da42877051df11b951d3bdeffb2 assets/tutorialmod/blockstates/stripped_ebony_log.json
 37e1fa0efb276cba124946f9a2f7e848546373a9 assets/tutorialmod/blockstates/stripped_ebony_wood.json
@@ -22,6 +23,7 @@ eb4eaaf445bb77d23c3983c2cc75e4f2fbd7dea5 assets/tutorialmod/models/block/ebony_s
 ab143fde7e7e86316b618876efb6cd946dd3a743 assets/tutorialmod/models/block/ebony_wood.json
 d6d09c7dc82101c48d019977710f0c18848c6e0e assets/tutorialmod/models/block/ebony_wood_horizontal.json
 0fd57636c83417207f7fae728bf0a0c9b78fc1f1 assets/tutorialmod/models/block/endstone_black_opal_ore.json
+92a86a36f35b7ab65d706a90f1f06b6d0b319cfe assets/tutorialmod/models/block/golden_rose.json
 acf8e638c4cb8d8834194f73295aa91dfc32a565 assets/tutorialmod/models/block/netherrack_black_opal_ore.json
 fa31759b9dee07e0558cc8c4f40b13f7983c44a2 assets/tutorialmod/models/block/stripped_ebony_log.json
 1a8fc521c87c19fdee062e60c10586c4c521db21 assets/tutorialmod/models/block/stripped_ebony_log_horizontal.json

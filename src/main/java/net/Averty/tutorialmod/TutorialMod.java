@@ -5,6 +5,9 @@ import net.Averty.tutorialmod.block.ModBlocks;
 import net.Averty.tutorialmod.items.ModCreativeModeTabs;
 import net.Averty.tutorialmod.items.Moditems;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.CreativeModeTabEvent;
@@ -38,6 +41,8 @@ public class TutorialMod {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+
+        ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.Golden_Rose.getId(), ModBlocks.Potted_Golden_Rose);
 
     }
 
@@ -75,6 +80,8 @@ public class TutorialMod {
             event.accept(ModBlocks.Stripped_Ebony_Log);
             event.accept(ModBlocks.Stripped_Ebony_Wood);
             event.accept(ModBlocks.Ebony_Sapling);
+            //Flowers
+            event.accept(ModBlocks.Golden_Rose);
 
             if(event.getTab() == CreativeModeTabs.NATURAL_BLOCKS) {
 

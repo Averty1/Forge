@@ -2,9 +2,11 @@ package net.Averty.tutorialmod.datagen;
 
 import net.Averty.tutorialmod.TutorialMod;
 import net.Averty.tutorialmod.block.ModBlocks;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
@@ -24,6 +26,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.Deepslate_Black_Opal_Ore);
         blockWithItem(ModBlocks.Endstone_Black_Opal_Ore);
         blockWithItem(ModBlocks.Netherrack_Black_Opal_Ore);
+        flowerBlock(ModBlocks.Golden_Rose);
 
         logBlock(((RotatedPillarBlock) ModBlocks.Ebony_Log.get()));
         axisBlock((RotatedPillarBlock) ModBlocks.Ebony_Wood.get(), blockTexture(ModBlocks.Ebony_Log.get()), blockTexture(ModBlocks.Ebony_Log.get()));
@@ -50,5 +53,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
             simpleBlock(blockRegistryObject.get(),
                     models().cross(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), blockTexture(blockRegistryObject.get())).renderType("cutout"));
         }
+        private void flowerBlock(RegistryObject<Block> blockRegistryObject) {
+            simpleBlock(blockRegistryObject.get(),
+                    models().cross(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), blockTexture(blockRegistryObject.get())).renderType("cutout"));
+            }
 
 }

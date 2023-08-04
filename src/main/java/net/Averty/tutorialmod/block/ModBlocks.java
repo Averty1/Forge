@@ -8,6 +8,8 @@ import net.Averty.tutorialmod.worldgen.tree.EbonyTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
@@ -95,6 +97,12 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> Ebony_Sapling = registerBlock("ebony_sapling",
             () -> new SaplingBlock(new EbonyTreeGrower(),BlockBehaviour.Properties.copy(net.minecraft.world.level.block.Blocks.OAK_SAPLING)));
+public static final RegistryObject<Block> Golden_Rose = registerBlock("golden_rose",
+            () -> new FlowerBlock(MobEffects.REGENERATION,5,
+                    BlockBehaviour.Properties.copy(net.minecraft.world.level.block.Blocks.POPPY)));
+public static final RegistryObject<Block> Potted_Golden_Rose = Blocks.register("potted_golden_rose",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) net.minecraft.world.level.block.Blocks.FLOWER_POT), ModBlocks.Golden_Rose,
+                    BlockBehaviour.Properties.copy(net.minecraft.world.level.block.Blocks.POTTED_POPPY)));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
