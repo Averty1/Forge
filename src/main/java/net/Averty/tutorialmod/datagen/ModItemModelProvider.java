@@ -24,6 +24,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(Moditems.Raw_Black_Opal);
         saplingItem(ModBlocks.Ebony_Sapling);
         flowerItem(ModBlocks.Golden_Rose);
+
+        withExistingParent(Moditems.Tiger_Spawn_Egg.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }
 
     private ItemModelBuilder saplingItem(RegistryObject<Block> item) {

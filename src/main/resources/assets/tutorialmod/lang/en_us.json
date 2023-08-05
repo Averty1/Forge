@@ -2,6 +2,7 @@
   "item.tutorialmod.black_opal": "Black Opal",
   "item.tutorialmod.raw_black_opal": "Raw Black Opal",
   "item.tutorialmod.mossy_sword": "Mossy Sword",
+  "item.tutorialmod.tiger_spawn_egg": "Tiger Spawn Egg",
 
   "block.tutorialmod.black_opal_block": "Black Opal Block",
   "block.tutorialmod.black_opal_ore": "Black Opal Ore",
@@ -19,6 +20,8 @@
 
  "block.tutorialmod.golden_rose": "Golden Rose",
  "block.tutorialmod.potted_golden_rose": "Potted Golden Rose",
+
+  "entity.tutorialmod.tiger": "Tiger",
 
 
 

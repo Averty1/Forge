@@ -2,10 +2,12 @@ package net.Averty.tutorialmod;
 
 import com.mojang.logging.LogUtils;
 import net.Averty.tutorialmod.block.ModBlocks;
+import net.Averty.tutorialmod.entity.ModEntities;
+import net.Averty.tutorialmod.entity.client.TigerRenderer;
 import net.Averty.tutorialmod.items.ModCreativeModeTabs;
 import net.Averty.tutorialmod.items.Moditems;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
@@ -31,6 +33,8 @@ public class TutorialMod {
 
         Moditems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
+        ModEntities.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -82,6 +86,8 @@ public class TutorialMod {
             event.accept(ModBlocks.Ebony_Sapling);
             //Flowers
             event.accept(ModBlocks.Golden_Rose);
+            //Spawn Eggs
+            event.accept(Moditems.Tiger_Spawn_Egg);
 
             if(event.getTab() == CreativeModeTabs.NATURAL_BLOCKS) {
 
@@ -101,7 +107,7 @@ public class TutorialMod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            EntityRenderers.register(ModEntities.TIGER.get(), TigerRenderer::new);
         }
     }
 }
